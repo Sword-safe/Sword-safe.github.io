@@ -1,1 +1,1 @@
-var posts=["2023/09/16/hello-world/","2023/09/16/漏洞复现/通达OA前台任意用户登录漏洞复现/"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};
+var posts=["2023/09/16/漏洞复现/通达OA前台任意用户登录漏洞复现/","2022/12/27/hello-world/"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};

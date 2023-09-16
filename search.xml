@@ -23,12 +23,18 @@
     
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2023/09/16/hello-world/"/>
-      <url>/2023/09/16/hello-world/</url>
+      <title>博客自述</title>
+      <link href="/2022/12/27/hello-world/"/>
+      <url>/2022/12/27/hello-world/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<p>由于博主很穷，兜比脸干净，所以主打的就是一个白嫖</p><p>博客是用GitHub+hexo搭建，图传用的是PicGo+Github+Gitee</p><p>hexo主题用的是安知鱼</p><p>hexo地址：<a href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a></p><p>安知鱼下载地址：<a href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu">anzhiyu-c&#x2F;hexo-theme-anzhiyu: 这是一个简洁美丽的hexo主题。 (github.com)</a></p><p>安知鱼使用文档：<a href="https://docs.anheyu.com/">安知鱼主题官方文档 | 一个简洁、美丽的静态hexo主题 (anheyu.com)</a></p><p><strong>由于各种白嫖，所以访问速度很慢，图片经常出现加载不出来的情况，各位大佬见谅，如遇到图片没有加载请多刷新几次页面！</strong></p>]]></content>
       
+      
+      <categories>
+          
+          <category> 博客自述 </category>
+          
+      </categories>
       
       
     </entry>
