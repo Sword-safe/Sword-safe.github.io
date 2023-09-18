@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>vim缓存文件</title>
+      <link href="/2023/09/18/CTF/vim%E7%BC%93%E5%AD%98/"/>
+      <url>/2023/09/18/CTF/vim%E7%BC%93%E5%AD%98/</url>
+      
+        <content type="html"><![CDATA[<p>Catf1agCTF靶场web swp</p><p> 题目链接：<a href="http://catf1ag.cn/">http://catf1ag.cn/</a></p><p><img src="https://gitee.com/Sword-safe/Sword-safe/raw/master/202309181902433.png" alt="image-20230918190228337"></p><h1 id="题目考点："><a href="#题目考点：" class="headerlink" title="题目考点："></a><strong>题目考点：</strong></h1><p><strong>vim在编辑文档的过程中如果异常退出，会产生缓存文件</strong></p><ul><li>vim 交换文件名</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">参考文章：vim手册</span><br><span class="line">https://yianwillis.github.io/vimcdoc/doc/usr_11.html (中文)</span><br><span class="line">https://vimdoc.sourceforge.net/htmldoc/usr_11.html (英文)</span><br></pre></td></tr></table></figure><p>在使用vim时会创建临时缓存文件，关闭vim时缓存文件则会被删除，当vim异常退出后，因为未处理缓存文件，导致可以通过缓存文件恢复原始文件内容</p><p>后缀是区分这些交换文件的方法同一个文件产生的多个交换文件的后缀是不一样的</p><p><strong>以 index.php 为例</strong>：第一次产生的交换文件名为 .index.php.swp</p><p>再次意外退出后，将会产生名为 .index.php.swo 的交换文件</p><p>第三次产生的交换文件则为 .index.php.swn</p><p><img src="https://gitee.com/Sword-safe/Sword-safe/raw/master/202309181931779.png" alt="image-20230918193151735"></p><p>以s 开头 第二位由 uvw 组成 第三位a-z</p><p>使用<code>vim -r</code>可以查看交换文件</p><p><img src="https://gitee.com/Sword-safe/Sword-safe/raw/master/202309181926895.png" alt="image-20230918192600832"></p><p>使用 <code>vim -r index.php</code>可以恢复交换文件</p><p><img src="https://gitee.com/Sword-safe/Sword-safe/raw/master/202309181921466.png" alt="image-20230918192149399"></p><p><img src="https://gitee.com/Sword-safe/Sword-safe/raw/master/202309181927007.png" alt="image-20230918192751943"></p><p><img src="https://gitee.com/Sword-safe/Sword-safe/raw/master/202309181928086.png" alt="image-20230918192814048"></p><p>恢复之后需要删除交换文件·<code>rm -rf .index.php.s*</code>要不然下次打开文件的是还是会有提示</p><p><img src="https://gitee.com/Sword-safe/Sword-safe/raw/master/202309181929902.png" alt="image-20230918192923844"></p><h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><h3 id="code1"><a href="#code1" class="headerlink" title="code1:"></a>code1:</h3><p>利用curl访问即可直接看到flag，因为vim使用的缓存存储为一种固定格式的二进制文件。而我们一般编辑的时明问可见字符，在vim的缓存中这些可见字符会原样保留</p><h3 id="code2"><a href="#code2" class="headerlink" title="code2:"></a>code2:</h3><p>将缓存文件下载下来，使用vim编辑原有文件，例如下载的.index.php.swp，则说明之前编辑的文件名为index.php会提示是否恢复，选择R进行恢复即可看到原始内容</p><h3 id="code-3"><a href="#code-3" class="headerlink" title="code:3"></a>code:3</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果扩展名是 “.swp” 的文件已经存在，逐次递减最后的字母，直到找到没有现存文件的名字为止。如果过了 “.saa” 还找不到，不建立交换文件。</span><br></pre></td></tr></table></figure><p>可以burp爆破所有可能性</p><p><img src="https://gitee.com/Sword-safe/Sword-safe/raw/master/202309181950952.png" alt="image-20230918195046850"></p><h1 id="解题方法"><a href="#解题方法" class="headerlink" title="解题方法"></a>解题方法</h1><p>在浏览器url后面加上<code>.index.php.swp</code>会自动下载交换文件</p><p><img src="https://gitee.com/Sword-safe/Sword-safe/raw/master/202309181955431.png" alt="image-20230918195506384"></p><p>使用记事本打开可以看到flag 因为在vim的缓存中这些可见字符会原样保留</p><p><img src="https://gitee.com/Sword-safe/Sword-safe/raw/master/202309181956618.png" alt="image-20230918195624559"></p><p>在Linux系统种使用<code>vim -r index.php.swp</code>可以看到文件的完整内容</p><p><img src="https://gitee.com/Sword-safe/Sword-safe/raw/master/202309181958047.png" alt="image-20230918195822005"></p><p><img src="https://gitee.com/Sword-safe/Sword-safe/raw/master/202309181957374.png" alt="image-20230918195731331"></p><p><strong>CTFhub的技能树中也有一道相同的题目</strong></p><p><img src="https://gitee.com/Sword-safe/Sword-safe/raw/master/202309181959395.png" alt="image-20230918195943341"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Catf1agCTF </tag>
+            
+            <tag> web </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>解决VMware导入vulnhub靶机无法获取IP地址</title>
       <link href="/2023/09/18/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/VMware%E6%89%93%E5%BC%80%E9%9D%B6%E6%9C%BA%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E7%BD%91%E7%BB%9C/"/>
       <url>/2023/09/18/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/VMware%E6%89%93%E5%BC%80%E9%9D%B6%E6%9C%BA%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E7%BD%91%E7%BB%9C/</url>
@@ -115,9 +142,9 @@
       
         <tags>
             
-            <tag> qsnctf </tag>
-            
             <tag> web </tag>
+            
+            <tag> qsnctf </tag>
             
         </tags>
       
