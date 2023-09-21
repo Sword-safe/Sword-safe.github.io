@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.sword-blogs.com/2023/09/21/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/phpstudy_2016-2018_rce%20%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</loc>
+    
+    <lastmod>2023-09-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.sword-blogs.com/about/index.html</loc>
     
     <lastmod>2023-09-19</lastmod>
@@ -165,14 +174,14 @@
   </url>
   
   <url>
-    <loc>https://www.sword-blogs.com/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/</loc>
+    <loc>https://www.sword-blogs.com/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</loc>
     <lastmod>2023-09-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.sword-blogs.com/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</loc>
+    <loc>https://www.sword-blogs.com/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/</loc>
     <lastmod>2023-09-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
