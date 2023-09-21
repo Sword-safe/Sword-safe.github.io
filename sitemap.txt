@@ -8,6 +8,7 @@ https://www.sword-blogs.com/categories/index.html
 https://www.sword-blogs.com/tags/index.html
 https://www.sword-blogs.com/2023/08/16/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/%E9%80%9A%E8%BE%BEOA%E5%89%8D%E5%8F%B0%E4%BB%BB%E6%84%8F%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/
 https://www.sword-blogs.com/2023/08/07/vulnhub%E9%9D%B6%E6%9C%BA/DC2/
+https://www.sword-blogs.com/2023/08/01/vulnhub%E9%9D%B6%E6%9C%BA/HACKADEMIC%EF%BC%9ARTB1/
 https://www.sword-blogs.com/2023/07/15/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/nginx-0.7.65_%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/
 https://www.sword-blogs.com/2023/05/12/CTF/%E9%9D%92%E5%B0%91%E5%B9%B4CTF-B2-PHP%E7%89%B9%E6%80%A7%E7%BB%83%E4%B9%A0/
 https://www.sword-blogs.com/2023/03/18/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/VMware%E6%89%93%E5%BC%80%E9%9D%B6%E6%9C%BA%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E7%BD%91%E7%BB%9C/
@@ -16,7 +17,7 @@ https://www.sword-blogs.com/
 https://www.sword-blogs.com/tags/qsnctf/
 https://www.sword-blogs.com/tags/web/
 https://www.sword-blogs.com/categories/%E5%8D%9A%E5%AE%A2%E8%87%AA%E8%BF%B0/
-https://www.sword-blogs.com/categories/vulnhub%E9%9D%B6%E6%9C%BA/
 https://www.sword-blogs.com/categories/CTF/
 https://www.sword-blogs.com/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/
+https://www.sword-blogs.com/categories/vulnhub%E9%9D%B6%E6%9C%BA/
 https://www.sword-blogs.com/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/
